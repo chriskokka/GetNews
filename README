@@ -1,0 +1,23 @@
+GetNews
+
+
+This is a simple news feed reader that lets you choose your favourite news feed,
+name it and displays the the freshest 10 posts from that feed, with the option
+of displaying the rest of the posts from the same feed on a separate page. All the feeds
+that a user adds are saved in the h2 in-memory database that Play provides and 
+the content of these feeds is displayed on the /userpage.
+ 
+All the feed data is stored using Apache Solr. 
+I am not going to add the whole Solr server here, but I am going to add the schema.xml,
+since it is the only file that you need to change for this project in the standard solr
+example project folder.
+
+I am also using the Java rome library in this project, which has a dependency on jdom 1.0
+(Important note: rome will not work with newer versions of jdom. At least it did not for me.) 
+For the Play Framework to recognise them you have to add them to your project directory
+in a folder named: lib  .(This is the easiest way)
+
+
+Author: Chris Kokka 2013
+
+

@@ -1,0 +1,47 @@
+@(signupForm: Form[User])
+
+@import helper._
+
+<html>
+<head>
+    <title>Sign up</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/bootstrap.css")">
+</head>
+<body style="width:400px;margin: 0 auto;background-color: #CCC;">
+@form(routes.Application.addUser()){
+<fieldset>
+    <legend style="color: #FF6600">Sign up:</legend>
+
+    <dl class=" " id="username_field">
+        <dt><label for="username" style="color: #FF6600;">Username:</label></dt>
+        <dd>
+            <input type="text" id="username" name="username" value="" class="input-large">
+        </dd>
+    </dl>
+
+    <dl class=" " id="password_field">
+        <dt><label for="password" style="color: #FF6600;">Password:</label></dt>
+        <dd>
+            <input type="password" id="password" name="password" class="input-large">
+        </dd>
+    </dl>
+
+    <dl class=" " id="repeatPassword_field">
+        <dt><label for="repeatPassword" style="color: #FF6600;">Repeat password:</label></dt>
+        <dd>
+            <input type="password" id="repeatPassword" name="repeatPassword" class="input-large">
+        </dd>
+    </dl>
+
+    <input type="submit" value="Sign up!" class="btn btn-success btn-small">
+    }
+    <div style="margin-top: 10px;">
+        @form(routes.Application.goToLogin()){
+        <input type="submit" value="Cancel" class="btn btn-primary btn-small">
+        }
+    </div>
+</fieldset>
+</body>
+</html>

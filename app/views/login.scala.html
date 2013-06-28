@@ -1,0 +1,40 @@
+@(signupForm: Form[User])
+
+@import helper._
+
+
+<html>
+<head>
+    <title>Log in</title>
+    <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/bootstrap.css")">
+    <link rel="pattern" type="image/png" href="@routes.Assets.at("images/binding_dark.png")">
+</head>
+<body style="width:400px;margin: 0 auto;background-image:url("public/images/binding_dark.png");background-repeat:repeat;">
+@form(routes.Application.login()){
+<fieldset>
+    <legend style="color: #FF6600;">Login</legend>
+
+    <dl class="" id="username_field">
+        <dt><label for="username" style="color: #FF6600;">Username:</label></dt>
+        <dd>
+            <input type="text" id="username" name="username"  class="input-large">
+        </dd>
+    </dl>
+
+    <dl class="input-large " id="password_field">
+        <dt><label for="password" style="color: #FF6600;">Password:</label></dt>
+        <dd>
+            <input type="password" id="password" name="password">
+        </dd>
+    </dl>
+    </div>
+    <input type="submit" value="Log  in!" class="btn btn-primary btn-small">
+    }
+    <div style="margin-top: 10px;">
+        @form(routes.Application.signup()){
+        <input type="submit" value="Sign up" class="btn btn-success btn-small">
+        }
+    </div>
+</fieldset>
+</body>
+</html>

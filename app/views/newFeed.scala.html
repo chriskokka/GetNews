@@ -1,0 +1,67 @@
+@(feedForm: Form[Feed],user: String)
+
+@import helper._
+
+<html>
+<head>
+    <title>Add a new feed</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/bootstrap.css")">
+</head>
+<body>
+<div style="position:absolute;right: 10px; top: 10px;">
+    <a>Logged in as, @user</a>
+    <br>
+    <a href="/">Log out</a>
+</div>
+<div class="container">
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="container" style="width: auto;">
+            <a class="brand">GetNews</a>
+            <div class="nav-collapse">
+                <ul class="nav">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/settings">Settings</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+                <form class="navbar-search pull-right" action="">
+                    <input type="text" class="search-query span2" placeholder="Search">
+                </form>
+            </div><!-- /.nav-collapse -->
+        </div>
+    </div><!-- /navbar-inner -->
+</div>
+
+<div class="container-fluid" style="border-radius: 6px;">
+    <div class="row-fluid">
+        <div class="span12" style="margin: 0 auto;">
+            @form(routes.Application.addFeed()){
+            <fieldset>
+                <legend style="color: #FF6600">Add a feed:</legend>
+
+                <dl class=" " id="url_field">
+                    <dt><label for="url" style="color: #FF6600;">URL:</label></dt>
+                    <dd>
+                        <input type="text" id="url" name="url" value="" class="input-large">
+                    </dd>
+                </dl>
+
+                <dl class=" " id="source_field">
+                    <dt><label for="source" style="color: #FF6600;">Source:</label></dt>
+                    <dd>
+                        <input type="text" id="source" name="source" class="input-large">
+                    </dd>
+                </dl>
+
+                <input type="submit" value="Add feed!" class="btn btn-success">
+                }
+            </fieldset>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>
