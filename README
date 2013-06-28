@@ -17,6 +17,8 @@ I am also using the Java rome library in this project, which has a dependency on
 For the Play Framework to recognise them you have to add them to your project directory
 in a folder named: lib  .(This is the easiest way)
 
+For parsing the Solr query result I used SAXParser.
+
 
 Author: Chris Kokka 2013
 
